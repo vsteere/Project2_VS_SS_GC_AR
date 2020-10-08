@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 //imports the meally model 
-let meally = require("../models/meally.js");
+let db = require("../models");
 
 //router functions and logic
 router.get("/", function (req, res) {
@@ -15,7 +15,7 @@ router.get("/", function (req, res) {
         orders: data
       };
       console.log(hbsObject);
-      //the handlebars file where we will render the datase results
+      //the handlebars partials file where we will render the datase results
       res.render("TOBENAMEDLATER", hbsObject);
     });
   });

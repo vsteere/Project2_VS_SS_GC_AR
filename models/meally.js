@@ -1,28 +1,34 @@
-const orm = require("../config/orm.js");
+module.exports = function(sequelize, DataTypes) {
+  const Meally = sequelize.define("Meally", {
+    // The email cannot be null, and must be a proper email before creation
+    customer_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+      
+      
+    },
+    // T
+    customer_address: {
+      type: DataTypes.STRING,
+      allowNull: false
+     
+      
+    },
 
-let order = {
-  selectAll: function(cb) {
-    orm.selectAll("orders", function(res) {
-      cb(res);
-    });
-  },
- 
-  createOne: function(cols, vals, cb) {
-    orm.createOne("orders", cols, vals, function(res) {
-      cb(res);
-    });
-  },
-  updateOne: function(objColVals, condition, cb) {
-    orm.updateOne("orders", objColVals, condition, function(res) {
-      cb(res);
-    });
-  },
-  deleteOne: function(condition, cb) {
-    orm.deleteOne("orders", condition, function(res) {
-      cb(res);
-    });
-  }
+    customer_order: {
+      type: DataTypes.STRING,
+      allowNull: false
+      
+      
+    },
+
+    customer_total: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false
+      
+    },
+  });
+
 };
 
-
-module.exports = order;
+module.exports = Meally;
