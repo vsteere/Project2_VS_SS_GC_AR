@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       
       
     },
-    // T
+    
     customer_address: {
       type: DataTypes.STRING,
       allowNull: false
@@ -28,7 +28,6 @@ module.exports = function(sequelize, DataTypes) {
       
     },
   });
-
+return Meally;
 };
 
-module.exports = Meally;

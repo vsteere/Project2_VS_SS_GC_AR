@@ -10,19 +10,19 @@ let db = require("../models");
 router.get("/", function (req, res) {
 
     //the selectAll matches the code in the ORM file
-    meally.selectAll(function (data) {
+    db.meally.selectAll(function (data) {
       let hbsObject = {
         orders: data
       };
       console.log(hbsObject);
       //the handlebars partials file where we will render the datase results
-      res.render("TOBENAMEDLATER", hbsObject);
+      res.render("orders", hbsObject);
     });
   });
   
   //this will write the new burger to the database
   router.post("/api/orders", function (req, res) {
-    meally.createOne([
+    db.exportsmeally.createOne([
       "new_order"
     ], [
       req.body.name
@@ -40,7 +40,7 @@ router.get("/", function (req, res) {
     //this is to change the status of the burger from not eaten to eaten
   
     //this is where it pulls from the boolean variable in SQL
-    meally.updateOne({
+    db.meally.updateOne({
       delivered: req.body.delivered
     }, condition, function (result) {
       if (result.changedRows == 0) {
@@ -55,7 +55,7 @@ router.get("/", function (req, res) {
   router.delete("/api/orders/:id", function (req, res) {
     let condition = "id = " + req.params.id;
   
-    meally.deleteOne(condition, function (result) {
+    db.meally.deleteOne(condition, function (result) {
       if (result.affectedRows == 0) {
         return res.status(404).end();
       } else {
