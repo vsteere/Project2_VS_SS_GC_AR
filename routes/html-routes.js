@@ -10,7 +10,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/orders");
     }
-    res.render("login");
+    res.render("signup");
   });
 
   app.get("/login", (req, res) => {
@@ -20,14 +20,14 @@ module.exports = function(app) {
     }
     res.render("login");
   });
-
-  app.get("/orders", (req, res) => {
-    // If the user already has an account send them to the orders page
-    if (req.user) {
-      res.redirect("/login");
-    }
-    res.render("signup");
-  });
+//this is not needed
+  // app.get("/orders", (req, res) => {
+  //   // If the user already has an account send them to the orders page
+  //   if (req.user) {
+  //     res.redirect("/login");
+  //   }np
+  //   res.render("signup");
+  // });
 
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the orders page
@@ -40,6 +40,6 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/orders", isAuthenticated, (req, res) => {
-    res.render("signup");
+    res.render("orders");
   });
 };

@@ -4,29 +4,25 @@ module.exports = function(sequelize, DataTypes) {
     customer_name: {
       type: DataTypes.STRING,
       allowNull: false
-      
-      
+           
     },
     
     customer_address: {
       type: DataTypes.STRING,
       allowNull: false
-     
-      
+          
     },
 
     customer_order: {
       type: DataTypes.STRING,
       allowNull: false
-      
-      
+            
     },
 
     customer_total: {
       type: DataTypes.DECIMAL(10,2),
       allowNull: false
-      
-    },
+          },
   });
 return Meally;
 };
