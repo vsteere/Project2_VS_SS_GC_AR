@@ -30,6 +30,12 @@ module.exports = function(app) {
       });
   });
 
+  // app.post("/api/login", (req, res) => {
+
+
+
+  // })
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();

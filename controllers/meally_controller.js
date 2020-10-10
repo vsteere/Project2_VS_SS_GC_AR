@@ -20,7 +20,7 @@ router.get("/", function (req, res) {
     });
   });
   
-  //this will write the new burger to the database
+  //this will write the new order to the database
   router.post("/api/orders", function (req, res) {
     db.exportsmeally.createOne([
       "new_order"
