@@ -1,7 +1,5 @@
-// Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -13,11 +11,7 @@ module.exports = function(app) {
       email: req.user.email,
       id: req.user.id
     });
-
-    
-
   });
-
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -33,15 +27,11 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
-  
-
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
   });
-
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
@@ -55,5 +45,19 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+  app.post("/api/orders", (req, res) => {
+    db.Meally.create({
+      customer_name: req.body.customer_name,
+      customer_address: req.body.customer_address,
+      customer_order: req.body.customer_order,
+      customer_total: req.body.customer_total
+    })
+      .then(function() {
+          console.log("added new order!");
+        })
+      .catch(err => {
+        throw(err)
+      });
   });
 };
