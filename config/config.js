@@ -1,7 +1,8 @@
+module.exports=
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": process.env.dbpass,
     "database": "meally_app",
     "host": "127.0.0.1",
     "dialect": "mysql"
