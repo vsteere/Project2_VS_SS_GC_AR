@@ -1,4 +1,3 @@
-
 <div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo">
     <p class="logopic"><img src="/Images/meal.ly.png" alt="meal.ly logo" width="250" height="250"></p>
@@ -8,27 +7,8 @@
     <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">contact</button></p>
   </div>
   <div class="w3-display-bottomleft w3-container">
-    {{!-- <p class="w3-xlarge">monday - friday 10-23 | saturday 14-02</p>
-    <p class="w3-large">42 village St, New York</p>
-    <p>powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p> --}}
   </div>
 </div>
-
-{{!-- Unordered list from burger app --}}
-{{!-- <ul>
-    {{#each burgers}}
-      {{#unless devoured}}
-          <span class="burgername"><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-          <button type="button" class="eatburger btn btn-success" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fas fa-utensils"></span></button>
-          <hr>
-      {{/unless}}
-  {{/each}}
-</ul> --}}
-
-
-
-
-
 <!-- Menu Modal -->
 <div id="menu" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
@@ -62,9 +42,8 @@
     </div>
   </div>
 </div>
-
 <!-- Contact Modal -->
-<div id="contact" class="w3-modal">
+{{!-- <div id="contact" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black">
       <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
@@ -72,14 +51,88 @@
     </div>
     <div class="w3-container">
       <p class="para-place-order">Place your order here:</p>
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People"></p>
+      <form class="order_form" target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name" id="customer_name"></p>
+                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name" id="customer_address"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People" id="customer_order"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" id="current-time"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+                <p><input class="w3-input w3-padding-16 w3-border" type=type="number" placeholder="Total" required name="Name" id="customer_total"></p>
         <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
-        <p><button class="w3-button" type="submit" onclick="clear()" id="btn-form">CLEAR</button></p>
+        {{!-- <p><button class="w3-button" type="submit" onclick="clear()" id="btn-form">CLEAR</button></p> --}}
       </form>
     </div>
   </div>
+</div> --}}
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1 id="h1-head">Meal.ly</h1>
 </div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  </div>
+</nav>
+
+<form class="order_form" target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name" id="customer_name"></p>
+                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name" id="customer_address"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People" id="customer_order"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" id="current-time"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+                <p><input class="w3-input w3-padding-16 w3-border" type=type="number" placeholder="Total" required name="Name" id="customer_total"></p>
+        <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
+        {{!-- <p><button class="w3-button" type="submit" onclick="clear()" id="btn-form">CLEAR</button></p> --}}
+      </form>
+{{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
+<div class="container">
+    <div class="row">
+        <!-- Order Placed -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="lefthead"><strong>Order Placed</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                            {{#unless devoured}}
+                                <span class="burgername"><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                                <button type="button" class="eatburger btn btn-success" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fas fa-utensils"></span></button>
+                                <hr>
+                            {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Order Delivered -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="righthead"><strong>Order Delivered</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                            {{#if devoured}}
+                                <span class="burgername"><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                                <button type="button" class="trashburger btn btn-dark" id ="trashbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="far fa-trash-alt"></span></button>
+                                <hr>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- /row -->
+  <div class="dropdown">
+    <button type="button" class="btn btn-secondary" id="btnEx">Export To Excel</button> <br>
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+</div><!-- /container -->
