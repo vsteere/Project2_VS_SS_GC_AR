@@ -1,41 +1,23 @@
-/* CSS for both forms */
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
-/* Login & Sign-up CSS */
-body,h5 {font-family: "Raleway", sans-serif}
+body,h1,h5 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
   background-image: url('/Images/onepage_restaurant.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
-  margin-bottom: 0;
 }
 
-.logo {
-margin-left: 0em;
-}
-/* Login & Sign-up CSS END */
-
-
-
-/* ---------------------------------------------------------- */
-
-
-
-/* Orders CSS */
 #btn-form {
  display: inline-block;
 }
 
-.para-place-order {
-  padding-top: 15px;
-}
 
-
+ gaylabranch
 #h1-head {
   font-family: 'Josefin Sans', sans-serif;
   margin-top: 0;
@@ -96,4 +78,5 @@ margin-left: 20px;
 .para-place-order {
   padding-top: 15px;
 }
+ main
 
