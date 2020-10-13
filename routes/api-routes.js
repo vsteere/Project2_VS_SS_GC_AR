@@ -12,6 +12,15 @@ module.exports = function(app) {
       id: req.user.id
     });
   });
+
+//route to pull the data from the database and redner onto orders handlebars
+  app.get("/api/orders", function(req, res)  {
+
+    db.Meally.findAll({}).then(function(dbMeally) {
+      res.json(dbMeally)
+
+    });
+  });
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error

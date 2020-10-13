@@ -95,10 +95,11 @@
                 <div class="panel-heading" id="lefthead"><strong>Order Placed</strong></div>
                 <div class="panel-body">
                     <ul>
-                        {{#each burgers}}
-                            {{#unless devoured}}
-                                <span class="burgername"><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                                <button type="button" class="eatburger btn btn-success" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fas fa-utensils"></span></button>
+                        {{#each meals}}
+                       
+                            {{#unless onTheway}}
+                                <span class="orderInfo"><strong> {{id}} - {{customer_order}} - {{customer_total}} </strong></span>
+                                <button type="button" class="deliverorder btn btn-success" id ="deliverbutton" data-id="{{id}}" data-newonTheway="{{onTheway}}"><span class="fas fa-utensils"></span></button>
                                 <hr>
                             {{/unless}}
                         {{/each}}
@@ -112,12 +113,13 @@
                 <div class="panel-heading" id="righthead"><strong>Order Delivered</strong></div>
                 <div class="panel-body">
                     <ul>
-                        {{#each burgers}}
-                            {{#if devoured}}
-                                <span class="burgername"><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                        {{#each meals}}
+                        <h1>{{this.customer_name}}</h1>
+                            {{!-- {{#if devoured}}
+                                <span class="deliveredInfo"><strong> {{this.id}} - {{this.burger_name}} </strong></span>
                                 <button type="button" class="trashburger btn btn-dark" id ="trashbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="far fa-trash-alt"></span></button>
                                 <hr>
-                            {{/if}}
+                            {{/if}} --}}
                         {{/each}}
                     </ul>
                 </div>

@@ -6,6 +6,27 @@ $(document).ready(() => {
   const customerOrder = $("input#customer_order");
   const customerTotal = $("input#customer_total");
 
+  const $orderContainer = $(".orderInfo");
+
+
+  // Our initial orderes array
+  let orders = [];
+
+  // Getting ordere from database when page loads
+  getOrders();
+
+  
+
+  // This function grabs orders from the database and updates the view
+  function getOrders() {
+    $.get("/api/orders", function(data) {
+      orders = data;
+     
+      console.log(orders);
+      
+    });
+  }
+
   meallyOrder.on("submit", event => {
     event.preventDefault();
     let new_order = {
