@@ -9,7 +9,7 @@ $(document).ready(() => {
   meallyOrder.on("submit", event => {
     event.preventDefault();
     let new_order = {
-       customer_name: customerName.val().trim(),
+      customer_name: customerName.val().trim(),
       customer_address: customerAddress.val().trim(),
       customer_order: customerOrder.val().trim(),
       customer_total: customerTotal.val().trim()
@@ -18,13 +18,13 @@ $(document).ready(() => {
       type: "POST",
       data: new_order
     }).then(
-      function() {
+      function () {
         console.log("created new order");
         // Reload the page to get the updated list
         // location.reload();
       }
     );
-    
+
 
     // orderMeally(customer_name, customer_address, customer_order, customer_total);
     // // customerName.val("");
@@ -43,7 +43,7 @@ $(document).ready(() => {
     //   console.log("added new order!");
     //   location.reload();
     // })
-    
+
     console.log(customer_name);
     console.log(customer_address);
     console.log(customer_order);
