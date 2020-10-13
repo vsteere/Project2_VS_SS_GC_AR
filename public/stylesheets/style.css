@@ -1,32 +1,17 @@
-/* CSS for both forms */
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
-/* Login & Sign-up CSS */
-body,h5 {font-family: "Raleway", sans-serif}
+body,h1,h5 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
   background-image: url('/Images/onepage_restaurant.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
-  margin-bottom: 0;
 }
 
-.logo {
-margin-left: 0em;
-}
-/* Login & Sign-up CSS END */
-
-
-
-/* ---------------------------------------------------------- */
-
-
-
-/* Orders CSS */
 #btn-form {
  display: inline-block;
 }
@@ -36,64 +21,4 @@ margin-left: 0em;
 }
 
 
-#h1-head {
-  font-family: 'Josefin Sans', sans-serif;
-  margin-top: 0;
-}
-
-
-.jumbotron {
-  background-image: url("/assets/images/BurgerOne.jpg");
-  background-position: center;
-  background-size: cover;
-  margin-top: 10px;
-  height: 180px;
-}
-
-.cust-label {
-  color: black;
-  font-size: 15px;
-  font-family: 'Josefin Sans', sans-serif; 
-}
-
-#cust-input{
-margin-left: 20px;
-}
-
-#lefthead {
-  background-color: #444744;
-  color: white;
-  text-align: center;
-  font-size: 18px;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-#righthead {
-  background-color: #438541;
-  color: white;
-  text-align: center;
-  font-size: 18px;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-.btnEx {
-  margin-right: 10px;
-}
-
-.form-inline {  
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  padding-left: 100px;
-  padding-bottom: 50px;
-}
-
-.form-inline label {
-  margin: 5px 10px 5px 0;
-}
-
-
-.para-place-order {
-  padding-top: 15px;
-}
 
