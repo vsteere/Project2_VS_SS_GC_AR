@@ -13,6 +13,20 @@ module.exports = function(app) {
     });
   });
 
+  app.put("/api/orders", function(req, res) {
+    db.Meally.update({onTheway:1},
+      {
+      where:{id:req.body.id}
+      
+    } ).then(function(dbMeally){
+      res.send(dbMeally)
+      console.log(dbMeally)
+    })
+
+
+  })
+  
+
 //route to pull the data from the database and redner onto orders handlebars
   app.get("/api/orders", function(req, res)  {
 

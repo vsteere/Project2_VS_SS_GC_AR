@@ -8,6 +8,7 @@ $(document).ready(() => {
 
   const $orderContainer = $(".orderInfo");
 
+  const deliverorder = $(".deliverorder");
 
   // Our initial orderes array
   let orders = [];
@@ -23,9 +24,31 @@ $(document).ready(() => {
       orders = data;
      
       console.log(orders);
+      location.reload;
       
     });
   }
+
+  deliverorder.on("click", event => {
+    
+    // console.log(event.target.getAttribute("data-id"))
+let orderid = event.target.getAttribute("data-id")
+    $.ajax("/api/orders", {
+      type: "PUT",
+      data: {id:orderid}
+    }).then(
+      function (res) {
+        console.log("updated order to delivered");
+        // Reload the page to get the updated list
+        console.log(res)
+        location.reload();
+
+    
+      }
+    );
+
+  })
+
 
   meallyOrder.on("submit", event => {
     event.preventDefault();

@@ -98,7 +98,7 @@
                         {{#each meals}}
                        
                             {{#unless onTheway}}
-                                <span class="orderInfo"><strong> {{id}} - {{customer_order}} - {{customer_total}} </strong></span>
+                                <span class="orderInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}} </strong></span>
                                 <button type="button" class="deliverorder btn btn-success" id ="deliverbutton" data-id="{{id}}" data-newonTheway="{{onTheway}}"><span class="fas fa-utensils"></span></button>
                                 <hr>
                             {{/unless}}
@@ -114,12 +114,12 @@
                 <div class="panel-body">
                     <ul>
                         {{#each meals}}
-                        <h1>{{this.customer_name}}</h1>
-                            {{!-- {{#if devoured}}
-                                <span class="deliveredInfo"><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                                <button type="button" class="trashburger btn btn-dark" id ="trashbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="far fa-trash-alt"></span></button>
+                      
+                            {{#if onTheway}}
+                                <span class="deliveredInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}}  </strong></span>
+                                <button type="button" class="deliveredOrder btn btn-dark" id ="trashbutton" data-id="{{this.id}}" data-newonTheway=""="{{onTheway}}"><span class="far fa-trash-alt"></span></button>
                                 <hr>
-                            {{/if}} --}}
+                            {{/if}}
                         {{/each}}
                     </ul>
                 </div>
