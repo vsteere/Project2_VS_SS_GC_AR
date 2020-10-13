@@ -1,3 +1,4 @@
+
 <div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo">
     <p class="logopic"><img src="/Images/meal.ly.png" alt="meal.ly logo" width="250" height="250"></p>
@@ -7,8 +8,11 @@
     <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">contact</button></p>
   </div>
   <div class="w3-display-bottomleft w3-container">
+
   </div>
 </div>
+
+
 <!-- Menu Modal -->
 <div id="menu" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
@@ -42,8 +46,9 @@
     </div>
   </div>
 </div>
+
 <!-- Contact Modal -->
-{{!-- <div id="contact" class="w3-modal">
+<div id="contact" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black">
       <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
@@ -51,41 +56,38 @@
     </div>
     <div class="w3-container">
       <p class="para-place-order">Place your order here:</p>
-      <form class="order_form" target="_blank">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name" id="customer_name"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name" id="customer_address"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People" id="customer_order"></p>
+      <form target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" id="current-time"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type=type="number" placeholder="Total" required name="Name" id="customer_total"></p>
+        {{!-- <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p> --}}
+                <p><input class="w3-input w3-padding-16 w3-border" type=type="number" placeholder="Total" required name="Name"></p>
         <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
         {{!-- <p><button class="w3-button" type="submit" onclick="clear()" id="btn-form">CLEAR</button></p> --}}
       </form>
     </div>
   </div>
-</div> --}}
-<div class="jumbotron text-center" style="margin-bottom:0">
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0" style="margin-top:0">
   <h1 id="h1-head">Meal.ly</h1>
 </div>
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-  </div>
+  </div>  
 </nav>
 
-<form class="order_form" target="_blank">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name" id="customer_name"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name" id="customer_address"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People" id="customer_order"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" id="current-time"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type=type="number" placeholder="Total" required name="Name" id="customer_total"></p>
-        <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
-        {{!-- <p><button class="w3-button" type="submit" onclick="clear()" id="btn-form">CLEAR</button></p> --}}
-      </form>
+<form class="form-inline" action="/action_page.php">
+  <label class="driverID" for="fname">Driver ID:</label>
+  <input class="driverInput" type="text" id="fname" name="fname" value=""><br>
+  {{!-- <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit"> --}}
+</form> 
+
+
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
 <div class="container">
     <div class="row">
@@ -124,15 +126,16 @@
             </div>
         </div>
     </div><!-- /row -->
-  <div class="dropdown">
-    <button type="button" class="btn btn-secondary" id="btnEx">Export To Excel</button> <br>
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-    </div>
+
+  
+    
+<div class="input-group mb-3">
+  <button type="button" class="btn btn-secondary" id="btnEx">Export To Excel</button> <br>
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
   </div>
-</div><!-- /container -->
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <div class="input-group-append">
+    <span class="input-group-text">.00</span>
+  </div>
+</div>
