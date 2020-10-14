@@ -1,13 +1,15 @@
-
 <div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo">
     <p class="logopic"><img src="/Images/meal.ly.png" alt="meal.ly logo" width="250" height="250"></p>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">menu</button></p>
-    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">contact</button></p>
-    <p><a href="/logout" onclick="document.getElementById('').style.display='block'" class="w3-button w3-black">logout</a></p>
-            {{!-- <a class="navbar-brand" href="/logout">
+    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">menu</button>
+    </p>
+    <p><button onclick="document.getElementById('contact').style.display='block'"
+        class="w3-button w3-black">contact</button></p>
+    <p><a href="/logout" onclick="document.getElementById('').style.display='block'"
+        class="w3-button w3-black">logout</a></p>
+    {{!-- <a class="navbar-brand" href="/logout">
         Logout
       </a> --}}
 
@@ -23,7 +25,8 @@
 <div id="menu" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black w3-display-container">
-      <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <span onclick="document.getElementById('menu').style.display='none'"
+        class="w3-button w3-display-topright w3-large">x</span>
       <h1>Starters</h1>
     </div>
     <div class="w3-container">
@@ -57,18 +60,21 @@
 <div id="contact" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black">
-      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <span onclick="document.getElementById('contact').style.display='none'"
+        class="w3-button w3-display-topright w3-large">x</span>
       <h1>Contact</h1>
     </div>
     <div class="w3-container">
       <p class="para-place-order">Place your order here:</p>
       <form target="_blank">
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" id="current-time"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required
+            name="date" id="current-time"></p>
         {{!-- <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p> --}}
-                <p><input class="w3-input w3-padding-16 w3-border" type=type="number" placeholder="Total" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type=type="number" placeholder="Total" required name="Name">
+        </p>
         <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
         {{!-- <p><button class="w3-button" type="submit" onclick="clear()" id="btn-form">CLEAR</button></p> --}}
       </form>
@@ -82,7 +88,7 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-  </div>  
+  </div>
 </nav>
 
 <form class="form-inline" action="/action_page.php">
@@ -91,59 +97,64 @@
   {{!-- <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname" value="Doe"><br><br>
   <input type="submit" value="Submit"> --}}
-</form> 
+</form>
 
 
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
 <div class="container">
-    <div class="row">
-        <!-- Order Placed -->
-        <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="lefthead"><strong>Order Placed</strong></div>
-                <div class="panel-body">
-                    <ul>
-                        {{#each meals}}
-                       
-                            {{#unless onTheway}}
-                                <span class="orderInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}} </strong></span>
-                                <button type="button" class="deliverorder btn btn-success" id ="deliverbutton" data-id="{{id}}" data-newonTheway="{{onTheway}}"><span class="fas fa-utensils"></span></button>
-                                <hr>
-                            {{/unless}}
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Order Delivered -->
-        <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="righthead"><strong>Order Delivered</strong></div>
-                <div class="panel-body">
-                    <ul>
-                        {{#each meals}}
-                      
-                            {{#if onTheway}}
-                                <span class="deliveredInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}}  </strong></span>
-                                <button type="button" class="deliveredOrder btn btn-dark" id ="trashbutton" data-id="{{this.id}}" data-newonTheway=""="{{onTheway}}"><span class="far fa-trash-alt"></span></button>
-                                <hr>
-                            {{/if}}
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div><!-- /row -->
+  <div class="row">
+    <!-- Order Placed -->
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="lefthead"><strong>Order Placed</strong></div>
+        <div class="panel-body">
+          <ul>
+            {{#each meals}}
 
-  
-    
-<div class="input-group mb-3">
-  <button type="button" class="btn btn-secondary" id="btnEx">Export To Excel</button> <br>
-  <div class="input-group-prepend">
-    <span class="input-group-text">$</span>
+            {{#unless onTheway}}
+            <span class="orderInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} -
+                customer order: {{customer_order}} - customer total: {{customer_total}} </strong></span>
+            <button type="button" class="deliverorder btn btn-success" id="deliverbutton" data-id="{{id}}"
+              data-newonTheway="{{onTheway}}"><span class="fas fa-utensils"></span></button>
+            <hr>
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Order Delivered -->
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="righthead"><strong>Order Delivered</strong></div>
+        <div class="panel-body">
+          <ul>
+            {{#each meals}}
+
+            {{#if onTheway}}
+            <span class="deliveredInfo"><strong> customer name: {{customer_name}} - customer address:
+                {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}}
+              </strong></span>
+            <button type="button" class="deliveredOrder btn btn-dark" id="trashbutton" data-id="{{this.id}}"
+              data-newonTheway=""="{{onTheway}}"><span class="far fa-trash-alt"></span></button>
+            <hr>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div><!-- /row -->
+
+
+
+  <div class="input-group mb-3">
+    <button type="button" class="btn btn-secondary" id="btnEx">Export To Excel</button> <br>
+    <div class="input-group-prepend">
+      <span class="input-group-text">$</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <div class="input-group-append">
+      <span class="input-group-text">.00</span>
+    </div>
   </div>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <div class="input-group-append">
-    <span class="input-group-text">.00</span>
-  </div>
-</div>
