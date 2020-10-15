@@ -25,6 +25,18 @@ module.exports = function(app) {
 
 
   })
+
+  app.delete("/api/orders", function(req, res) {
+    console.log("calling route")
+    db.Meally.destroy({
+      where: {
+        id: req.body.id
+      }
+
+    }).then(function(dbMeally) {
+      res.sendStatus(200);
+    });
+  })
   
 
 //route to pull the data from the database and redner onto orders handlebars
@@ -70,17 +82,26 @@ module.exports = function(app) {
     }
   });
   app.post("/api/orders", (req, res) => {
+    console.log(req.body)
     db.Meally.create({
       customer_name: req.body.customer_name,
       customer_address: req.body.customer_address,
       customer_order: req.body.customer_order,
-      customer_total: req.body.customer_total
-    })
-      .then(function() {
+      customer_total: parseFloat(req.body.customer_total)
+          })
+      .then(function(dbMeally) {
           console.log("added new order!");
+          res.json(dbMeally)
         })
       .catch(err => {
         throw(err)
       });
   });
+
+
+
+
+
 };
+
+

@@ -3,10 +3,10 @@
     <p class="logopic"><img src="/Images/meal.ly.png" alt="meal.ly logo" width="250" height="250"></p>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">menu</button>
+    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">Restaurants Served</button>
     </p>
-    <p><button onclick="document.getElementById('contact').style.display='block'"
-        class="w3-button w3-black">contact</button></p>
+    <p><button onclick="document.getElementById('orders').style.display='block'"
+        class="w3-button w3-black">Place Order</button></p>
     <p><a href="/logout" onclick="document.getElementById('').style.display='block'"
         class="w3-button w3-black">logout</a></p>
     {{!-- <a class="navbar-brand" href="/logout">
@@ -27,59 +27,62 @@
     <div class="w3-container w3-black w3-display-container">
       <span onclick="document.getElementById('menu').style.display='none'"
         class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Starters</h1>
+      <h1>Italian</h1>
     </div>
     <div class="w3-container">
-      <h5>Tomato Soup <b>$2.50</b></h5>
-      <h5>Chicken Salad <b>$3.50</b></h5>
-      <h5>Bread and Butter <b>$1.00</b></h5>
+      <h5>Olive Garden</h5>
+      <h5>Carraba's</h5>
+      <h5>Macaroni Grill</h5>
     </div>
     <div class="w3-container w3-black">
-      <h1>Main Courses</h1>
+      <h1>Steak</h1>
     </div>
     <div class="w3-container">
-      <h5>Grilled Fish and Potatoes <b>$8.50</b></h5>
-      <h5>Italian Pizza <b>$5.50</b></h5>
-      <h5>Veggie Pasta <b>$4.00</b></h5>
-      <h5>Chicken and Potatoes <b>$6.50</b></h5>
-      <h5>Deluxe Burger <b>$5.00</b></h5>
+      <h5>Outback Steakhouse</h5>
+      <h5>Longhorn Steakhouse</h5>
+      <h5>Texas Roadhouse</h5>
+      <h5>Texas de Brazil </h5>
+      
     </div>
     <div class="w3-container w3-black">
-      <h1>Desserts</h1>
+      <h1>Seafood</h1>
     </div>
     <div class="w3-container">
-      <h5>Fruit Salad <b>$2.50</b></h5>
-      <h5>Ice cream <b>$2.00</b></h5>
-      <h5>Chocolate Cake <b>$4.00</b></h5>
-      <h5>Cheese <b>$5.50</b></h5>
+      <h5>Trulucks</h5>
+      <h5>Bonefish Grill</h5>
+      <h5>Pappadeaux</h5>
+      
     </div>
   </div>
 </div>
 
-<!-- Contact Modal -->
-<div id="contact" class="w3-modal">
+<!-- Orders Modal -->
+<div id="orders" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black">
-      <span onclick="document.getElementById('contact').style.display='none'"
+      <span onclick="document.getElementById('orders').style.display='none'"
         class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Contact</h1>
+      <h1>Place Order</h1>
     </div>
     <div class="w3-container">
-      <p class="para-place-order">Place your order here:</p>
-      <form target="_blank">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required
-            name="date" id="current-time"></p>
-        {{!-- <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p> --}}
-        <p><input class="w3-input w3-padding-16 w3-border" type=type="number" placeholder="Total" required name="Name">
-        </p>
-        <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
-        {{!-- <p><button class="w3-button" type="submit" onclick="clear()" id="btn-form">CLEAR</button></p> --}}
-      </form>
-    </div>
-  </div>
+  <p class="para-place-order">Place your order here:</p>
+  <form class="order_form">
+    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"
+        id="customer_name"></p>
+    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name"
+        id="customer_address"></p>
+    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People"
+        id="customer_order"></p>
+    <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required
+        name="date" id="current-time"></p>
+    <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Total" required name="Name"
+        id="customer_total">
+    </p>
+    <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
+
+  </form>
+</div>
+</div>
 </div>
 
 <div class="jumbotron text-center" style="margin-bottom:0" style="margin-top:0">
@@ -90,6 +93,8 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   </div>
 </nav>
+
+
 
 <form class="form-inline" action="/action_page.php">
   <label class="driverID" for="fname">Driver ID:</label>

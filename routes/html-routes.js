@@ -20,14 +20,6 @@ module.exports = function(app) {
     }
     res.render("login");
   });
-//this is not needed
-  // app.get("/orders", (req, res) => {
-  //   // If the user already has an account send them to the orders page
-  //   if (req.user) {
-  //     res.redirect("/login");
-  //   }np
-  //   res.render("signup");
-  // });
 
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the orders page
