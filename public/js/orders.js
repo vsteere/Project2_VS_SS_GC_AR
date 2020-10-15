@@ -10,32 +10,53 @@ $(document).ready(() => {
 
   const deliverorder = $(".deliverorder");
 
-  // Our initial orderes array
-  let orders = [];
+  const trashButton = $(".deliveredOrder");
 
-  // Getting ordere from database when page loads
-  getOrders();
+  // Our initial orders array
+  let orders = [];
 
   
 
+
+
+
   // This function grabs orders from the database and updates the view
   function getOrders() {
-    $.get("/api/orders", function(data) {
-      orders = data;
-     
-      console.log(orders);
-      location.reload;
-      
-    });
+
+    location.reload();
+
+
   }
 
-  deliverorder.on("click", event => {
-    
-    // console.log(event.target.getAttribute("data-id"))
-let orderid = event.target.getAttribute("data-id")
+  trashButton.on("click", event => {
+console.log("this button fires the function")
+
+let deleteId = event.target.getAttribute("data-id");
+    $.ajax({
+      method: "DELETE",
+      url: "/api/orders",
+      data: {id:deleteId}
+    }).done(function (data) {
+      console.log("deleted delivered order", data);
+      // Reload the page to get the updated list
+      getOrders();
+
+
+      }
+    );
+
+  })
+
+
+
+
+  $(document).on("click", ".deliverorder", event => {
+console.log("this is to make sure it works")
+
+    let orderid = event.target.getAttribute("data-id")
     $.ajax("/api/orders", {
       type: "PUT",
-      data: {id:orderid}
+      data: { id: orderid }
     }).then(
       function (res) {
         console.log("updated order to delivered");
@@ -43,60 +64,58 @@ let orderid = event.target.getAttribute("data-id")
         console.log(res)
         location.reload();
 
-    
+
       }
     );
 
   })
 
 
-  meallyOrder.on("submit", event => {
-    event.preventDefault();
-    let new_order = {
-      customer_name: customerName.val().trim(),
-      customer_address: customerAddress.val().trim(),
-      customer_order: customerOrder.val().trim(),
-      customer_total: customerTotal.val().trim()
-    }
-    $.ajax("/api/orders", {
-      type: "POST",
-      data: new_order
-    }).then(
-      function () {
-        console.log("created new order");
-        // Reload the page to get the updated list
-        // location.reload();
-      }
-    );
 
-
-    // orderMeally(customer_name, customer_address, customer_order, customer_total);
-    // // customerName.val("");
-    // // customerAddress.val("");
-    // // customerOrder.val("");
-    // // customerTotal.val("");
-  });
-
-  function orderMeally(customer_name, customer_address, customer_order, customer_total) {
-    // $.post("/api/orders", {
-    //   customer_name: customer_name,
-    //   customer_address: customer_address,
-    //   customer_order: customer_order,
-    //   customer_total: customer_total
-    // }).then (function() {
-    //   console.log("added new order!");
-    //   location.reload();
-    // })
-
-    console.log(customer_name);
-    console.log(customer_address);
-    console.log(customer_order);
-    console.log(customer_total);
+meallyOrder.on("submit", event => {
+  event.preventDefault();
+  document.getElementById('orders').style.display = 'none';
+  console.log(customerName.val())
+  let new_order = {
+    customer_name: customerName.val().trim(),
+    customer_address: customerAddress.val().trim(),
+    customer_order: customerOrder.val().trim(),
+    customer_total: customerTotal.val().trim()
   }
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  $.get("/api/user_data").then(data => {
-    $(".member-name").text(data.email);
+  $.ajax({
+    method: "POST",
+    url: "/api/orders",
+    data: new_order
+  }).done(function (data) {
+    console.log("created new order", data);
+    // Reload the page to get the updated list
+    getOrders();
   });
+
+ 
+  
+});
+
+function orderMeally(customer_name, customer_address, customer_order, customer_total) {
+  // $.post("/api/orders", {
+  //   customer_name: customer_name,
+  //   customer_address: customer_address,
+  //   customer_order: customer_order,
+  //   customer_total: customer_total
+  // }).then (function() {
+  //   console.log("added new order!");
+  //   location.reload();
+  // })
+
+  console.log(customer_name);
+  console.log(customer_address);
+  console.log(customer_order);
+  console.log(customer_total);
+}
+// This file just does a GET request to figure out which user is logged in
+// and updates the HTML on the page
+$.get("/api/user_data").then(data => {
+  $(".member-name").text(data.email);
+});
 
 });
