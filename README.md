@@ -1,5 +1,7 @@
 # MEAL.LY
 
+![meal ly](https://user-images.githubusercontent.com/67175494/96298703-83871800-0fb8-11eb-8aee-fa0f766940f7.png)
+
 **MEAL.LY** _is a software application for clients to use to keep track of their customers order placed, status and delivery._
 
 ## User Story
@@ -63,13 +65,12 @@ This software application is used for clients who are in need of a simple point 
 
 
 ## Visuals
-![Main](assets\orders.png)
+<img width="1128" alt="orders" src="https://user-images.githubusercontent.com/67175494/96298618-605c6880-0fb8-11eb-930a-6f89e6f57d95.png">
 
 Main order page which shows the orders being processed/delivered while also giving easy access to restaurants using the application as well as customer input form.
 
-
-![Login](assets\login.png)
-![Sign-up](assets\sign-up.png)
+<img width="1090" alt="sign-up" src="https://user-images.githubusercontent.com/67175494/96298664-710cde80-0fb8-11eb-9bc3-16468aadb180.png">
+<img width="1204" alt="login" src="https://user-images.githubusercontent.com/67175494/96298670-7407cf00-0fb8-11eb-88c9-53b813673f96.png">
 
 Sign-up and login pages powered by passport authentication to protect user data.
 
