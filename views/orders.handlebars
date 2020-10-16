@@ -3,15 +3,13 @@
     <p class="logopic"><img src="/Images/meal.ly.png" alt="meal.ly logo" width="250" height="250"></p>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">Restaurants Served</button>
+    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">restaurants served</button>
     </p>
     <p><button onclick="document.getElementById('orders').style.display='block'"
-        class="w3-button w3-black">Place Order</button></p>
+        class="w3-button w3-black">place order</button></p>
     <p><a href="/logout" onclick="document.getElementById('').style.display='block'"
         class="w3-button w3-black">logout</a></p>
-    {{!-- <a class="navbar-brand" href="/logout">
-        Logout
-      </a> --}}
+
   </div>
   <div class="w3-display-bottomleft w3-container">
   </div>
@@ -78,33 +76,35 @@
 <div class="jumbotron text-center" style="margin-bottom:0" style="margin-top:0">
   <h1 id="h1-head">Meal.ly</h1>
 </div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+{{!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
   </div>
-</nav>
+</nav> --}}
 <form class="form-inline" action="/action_page.php">
   <label class="driverID" for="fname">Driver ID:</label>
   <input class="driverInput" type="text" id="fname" name="fname" value=""><br>
 </form>
+
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
 <div class="container">
-  <div class="row">
-    <!-- Order Placed -->
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading" id="lefthead"><strong>Order Placed</strong></div>
-        <div class="panel-body">
-          <ul>
-            {{#each meals}}
-            {{#unless onTheway}}
-            <span class="orderInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} -
-                customer order: {{customer_order}} - customer total: {{customer_total}} </strong></span>
-            <button type="button" class="deliverorder btn btn-success" id="deliverbutton" data-id="{{id}}"
-              data-newonTheway="{{onTheway}}"><span class="fas fa-utensils"></span></button>
-            <hr>
-            {{/unless}}
-            {{/each}}
-          </ul>
+    <div class="row">
+        <!-- Order Placed -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="lefthead"><strong>Order Placed</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each meals}}
+                       
+                            {{#unless onTheway}}
+                                <span class="orderInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}} </strong></span>
+                                <button type="button" class="deliverorder btn btn-secondary" id ="deliverbutton" data-id="{{id}}" data-newonTheway="{{onTheway}}"><span class="fas fa-utensils"></span></button>
+                                <hr>
+                            {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
         </div>
         <!-- Order Delivered -->
         <div class="col-sm-6">
@@ -113,12 +113,10 @@
                 <div class="panel-body">
                     <ul>
                         {{#each meals}}
+                      
                             {{#if onTheway}}
-                                <span class="deliveredInfo"><strong> customer name: {{customer_name}} - customer address:
-                                  {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}}
-                                  </strong></span>
-                                <button type="button" class="deliveredOrder btn btn-dark" id ="trashbutton" data-id="{{this.id}}"
-                                data-newonTheway=""="{{onTheway}}"><span class="far fa-trash-alt"></span></button>
+                                <span class="deliveredInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}}  </strong></span>
+                                <button type="button" class="deliveredOrder btn btn-dark" id ="trashbutton" data-id="{{this.id}}" data-newonTheway=""="{{onTheway}}"><span class="fas fa-truck"></span></button>
                                 <hr>
                             {{/if}}
                         {{/each}}
@@ -127,13 +125,14 @@
             </div>
         </div>
     </div><!-- /row -->
-<div class="input-group mb-3">
-  <button type="button" class="btn btn-secondary" id="btnEx">Export To Excel</button> <br>
-  <div class="input-group-prepend">
-    <span class="input-group-text">$</span>
-  </div>
-  <input type="text" class="form-control rounded-0" aria-label="Amount (to the nearest dollar)">
-  <div class="input-group-append">
-    <span class="input-group-text">.00</span>
-  </div>
+    
+  {{!-- <div class="input-group mb-3">
+    <button type="button" class="btn btn-secondary" id="btnEx">Export To Excel</button> <br>
+    <div class="input-group-prepend">
+      <span class="input-group-text">$</span>
+    </div>
+    <input type="text" class="form-control rounded-0" aria-label="Amount (to the nearest dollar)">
+    <div class="input-group-append">
+      <span class="input-group-text">.00</span>
+  </div> --}}
 </div>
