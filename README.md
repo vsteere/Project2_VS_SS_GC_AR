@@ -18,7 +18,7 @@ SO THAT we can be organized through the delivery system
 * [Usage](#usage)
 * [Technologies](#technologies)
 * [Visuals](#visuals)
-* [Credits & Contributors](#credits & contributors)
+* [Credits](#credits/contributors)
 
 ## Requirements
 
@@ -67,15 +67,16 @@ This software application is used for clients who are in need of a simple point 
 
 Main order page which shows the orders being processed/delivered while also giving easy access to restaurants using the application as well as customer input form.
 
-![Signup](assets\signin.png)
+
 ![Login](assets\login.png)
+![Sign-up](assets\sign-up.png)
 
 Sign-up and login pages powered by passport authentication to protect user data.
 
 
 
 
-## Credits & Contributors
+## Credits/Contributors
 <a href="https://github.com/vsteere/Project2_VS_SS_GC_AR/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=vsteere/Project2_VS_SS_GC_AR" />
 </a>
