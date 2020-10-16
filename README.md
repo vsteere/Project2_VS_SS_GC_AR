@@ -46,7 +46,7 @@ This software application is used for clients who are in need of a simple point 
 ## Visuals
 <img width="1090" alt="Home" src="https://user-images.githubusercontent.com/67169488/96290385-1a99a300-0fac-11eb-9839-1367b4ff1780.png">
 
-<img width="1107" alt="Sign-up" src="https://user-images.githubusercontent.com/67169488/96290392-1f5e5700-0fac-11eb-8fb1-6ded09217136.png">
+<img width="1090" alt="Sign-up" src="https://user-images.githubusercontent.com/67169488/96296706-51c08200-0fb5-11eb-9eb8-b92794912fd5.png">
 
 <img width="1104" alt="Login" src="https://user-images.githubusercontent.com/67169488/96290396-21281a80-0fac-11eb-87ab-d7eb64d2a738.png">
 
