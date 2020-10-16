@@ -16,6 +16,7 @@ body, html {height: 100%}
 #h1-head {
   font-family: 'Permanent Marker', cursive;
   margin-top: 0;
+  font-size: 70px;
 }
 .jumbotron {
   background-position: center;
@@ -61,15 +62,18 @@ margin-left: 20px;
   font-weight: 100;
 }
 /* Form div for Driver ID */
-.form-inline {
+.form-inline {  
   /* display: flex;
   flex-flow: row wrap;
   align-items: center; */
   padding-left: 50px;
   padding-bottom: 30px;
+  margin-top: 50px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 100;
 }
+
+
 /* Form div for Driver ID LABEL*/
 .form-inline label {
   margin: 5px 10px 5px 0;
