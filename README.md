@@ -18,7 +18,7 @@ SO THAT we can be organized through the delivery system
 * [Usage](#usage)
 * [Technologies](#technologies)
 * [Visuals](#visuals)
-* [Credits](#credits/contributors)
+* [Credits & Contributors](#creditscontributors)
 
 ## Requirements
 
@@ -76,7 +76,7 @@ Sign-up and login pages powered by passport authentication to protect user data.
 
 
 
-## Credits/Contributors
+## Credits & Contributors
 <a href="https://github.com/vsteere/Project2_VS_SS_GC_AR/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=vsteere/Project2_VS_SS_GC_AR" />
 </a>
