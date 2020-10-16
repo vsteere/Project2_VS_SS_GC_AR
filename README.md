@@ -9,7 +9,7 @@ MEAL.LY is a software application for clients to use to keep track of their cust
 * [Usage](#usage)
 * [Technologies](#technologies)
 * [Visuals](#visuals)
-* [Credits & Contributors](#credits & contributors)
+* [Credits & Contributors](#creditscontributors)
 
 
 
