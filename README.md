@@ -1,7 +1,7 @@
 # MEAL.LY
 
 <p align="center">
-  <img width="600" height="200" src="https://user-images.githubusercontent.com/67175494/96298703-83871800-0fb8-11eb-8aee-fa0f766940f7.png">
+  <img src="https://user-images.githubusercontent.com/67175494/96298703-83871800-0fb8-11eb-8aee-fa0f766940f7.png">
 </p>
 
 **MEAL.LY** _is a software application for clients to use to keep track of their customers order placed, status and delivery._
