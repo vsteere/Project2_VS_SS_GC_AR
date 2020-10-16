@@ -50,6 +50,8 @@ This software application is used for clients who are in need of a simple point 
 
 <img width="1104" alt="Login" src="https://user-images.githubusercontent.com/67169488/96290396-21281a80-0fac-11eb-87ab-d7eb64d2a738.png">
 
+## Application Link
+
 
 
 ## Credits & Contributors
