@@ -12,7 +12,15 @@ WE WANT TO help the driver visualize the process
 SO THAT we can be organized through the delivery system
 ```
 
-## Application Requirements
+## Table of contents
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Technologies](#technologies)
+* [Visuals](#visuals)
+* [Credits & Contributors](#credits & contributors)
+
+## Requirements
 
 _Using Node and Express Web Server:_
 ```
@@ -28,28 +36,46 @@ _Using Node and Express Web Server:_
 
 ## Installation
 
-Dependencies used include:
+To run this application, install locally using node package manager or npm.
+
 ```
-* dotenv
-* express
-* express-handlebars
-* mysql2
-* passport
-* sequelize
+* Git clone repository
+* Setup in code editor
+* "Npm i" to intall all dependencies for application 
+* Run "node start", "node server.js" or "node ." to setup PORT at locahost 
+* Then go to localhost PORT provided inside the applications code editor of file "server.js"
 ```
-## Examples of Application
+## Usage
 
-![Sign-up page](assets\signin.png)
-![Login page](assets\login.png)
+This software application is used for clients who are in need of a simple point of sale system that keeps track of their customers order input, order pending status and order delivery status.
 
-Sign-up and login pages for the driver backed by passport authentication.
 
-![Order page](assets\orders.png)
+## Technologies
+```
+* Node 13.7.7 
+* Express Web Server 4.17.1
+* Passport 1.0.0
+* MySQL2 1.7.0 
+* Sequelize ORM 5.22.3
+* GET and POST routes
+```
 
-Order page for easy access to the restaurants using the application and for inputting customer data.
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+## Visuals
+![Main](assets\orders.png)
 
+Main order page which shows the orders being processed/delivered while also giving easy access to restaurants using the application as well as customer input form.
+
+![Signup](assets\signin.png)
+![Login](assets\login.png)
+
+Sign-up and login pages powered by passport authentication to protect user data.
+
+
+
+
+## Credits & Contributors
+<a href="https://github.com/vsteere/Project2_VS_SS_GC_AR/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=vsteere/Project2_VS_SS_GC_AR" />
+</a>
