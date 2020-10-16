@@ -2,7 +2,6 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
-
 body,h1,h5 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
@@ -11,71 +10,67 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
-
 #btn-form {
  display: inline-block;
 }
-
-
- gaylabranch
 #h1-head {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Permanent Marker', cursive;
   margin-top: 0;
 }
-
-
 .jumbotron {
   background-position: center;
   background-size: cover;
   margin-top: 10px;
   height: 180px;
 }
-
 .cust-label {
   color: black;
   font-size: 15px;
-  font-family: 'Josefin Sans', sans-serif; 
+  font-family: 'Montserrat', sans-serif;
 }
-
 #cust-input{
 margin-left: 20px;
 }
-
 #lefthead {
-  background-color: #444744;
+  background-color: #010F01;
   color: white;
   text-align: center;
   font-size: 18px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
 }
-
 #righthead {
-  background-color: #438541;
+  background-color: #595C59;
   color: white;
   text-align: center;
   font-size: 18px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
 }
-
-.btnEx {
-  margin-right: 10px;
-}
-
-.form-inline {  
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  padding-left: 100px;
-  padding-bottom: 50px;
-}
-
-.form-inline label {
-  margin: 5px 10px 5px 0;
-}
-
-
 .para-place-order {
   padding-top: 15px;
 }
- main
-
+/* Export to excel button */
+#btnEx {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+/* Driver ID */
+.driverID {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}
+/* Form div for Driver ID */
+.form-inline {
+  /* display: flex;
+  flex-flow: row wrap;
+  align-items: center; */
+  padding-left: 50px;
+  padding-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}
+/* Form div for Driver ID LABEL*/
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
