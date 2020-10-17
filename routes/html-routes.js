@@ -20,7 +20,7 @@ module.exports = function(app) {
     if (req.user) {
       console.log("user object")
        console.log(req.user)
-      // res.redirect("/orders");
+      res.redirect("/orders");
     }
     res.render("login");
   });

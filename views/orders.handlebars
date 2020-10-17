@@ -98,7 +98,7 @@
                        
                             {{#unless onTheway}}
                                 <span class="orderInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}} </strong></span>
-                                <button type="button" class="deliverorder btn btn-secondary" id ="deliverbutton" data-id="{{id}}" data-newonTheway="{{onTheway}}"><span class="fas fa-utensils"></span></button>
+                                <button type="button" class="deliverorder btn btn-secondary fas fa-utensils" id ="deliverbutton" data-id="{{id}}" data-newonTheway="{{onTheway}}"></button>
                                 <hr>
                             {{/unless}}
                         {{/each}}
@@ -116,7 +116,7 @@
                       
                             {{#if onTheway}}
                                 <span class="deliveredInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}}  </strong></span>
-                                <button type="button" class="deliveredOrder btn btn-dark" id ="trashbutton" data-id="{{this.id}}" data-newonTheway=""="{{onTheway}}"><span class="fas fa-truck"></span></button>
+                                <button type="button" class="deliveredOrder btn btn-dark fas fa-truck" id ="trashbutton" data-id="{{this.id}}" data-newonTheway=""="{{onTheway}}"></button>
                                 <hr>
                             {{/if}}
                         {{/each}}
