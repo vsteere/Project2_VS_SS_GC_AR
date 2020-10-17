@@ -62,6 +62,7 @@ This software application is used for clients who are in need of a simple point 
 * MySQL2 1.7.0 
 * Sequelize ORM 5.22.3
 * GET and POST routes
+* W3 Schools CSS
 ```
 
 
