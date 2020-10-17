@@ -78,6 +78,7 @@ Sign-up and login pages powered by passport authentication to protect user data.
 
 
 [MEAL.LY!](https://meally-food-delivery-tracker.herokuapp.com/signup)
+[Presentation](https://docs.google.com/presentation/d/1Ix7YYKt641BhZkIIpQq_cB3C8dL1UTh6MkabETlfOGg/edit?usp=sharing)
 
 
 ## Credits & Contributors
