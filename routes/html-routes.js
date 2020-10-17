@@ -7,8 +7,10 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   app.get("/", (req, res) => {
     // 
-    if (req.user) {
-      res.redirect("/orders");
+    if (req.user)
+     {
+       
+      // res.redirect("/orders");
     }
     res.render("signup");
   });
@@ -16,7 +18,9 @@ module.exports = function(app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the orders page
     if (req.user) {
-      res.redirect("/orders");
+      console.log("user object")
+       console.log(req.user)
+      // res.redirect("/orders");
     }
     res.render("login");
   });
@@ -34,6 +38,6 @@ module.exports = function(app) {
   app.get("/orders", isAuthenticated, (req, res) => {
     db.Meally.findAll({raw:true}).then(function(dbMeals) {
       
-      res.render("orders", {meals:dbMeals})
+      res.render("orders", {meals:dbMeals, user: req.user})
   });})
 };
