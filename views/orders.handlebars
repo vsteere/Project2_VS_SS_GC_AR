@@ -3,10 +3,11 @@
     <p class="logopic"><img src="/Images/meal.ly.png" alt="meal.ly logo" width="250" height="250"></p>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">restaurants served</button>
+    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">restaurants
+        served</button>
     </p>
-    <p><button onclick="document.getElementById('orders').style.display='block'"
-        class="w3-button w3-black">place order</button></p>
+    <p><button onclick="document.getElementById('orders').style.display='block'" class="w3-button w3-black">place
+        order</button></p>
     <p><a href="/logout" onclick="document.getElementById('').style.display='block'"
         class="w3-button w3-black">logout</a></p>
 
@@ -55,23 +56,23 @@
       <h1>Place Order</h1>
     </div>
     <div class="w3-container">
-  <p class="para-place-order">Place your order here:</p>
-  <form class="order_form">
-    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"
-        id="customer_name"></p>
-    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name"
-        id="customer_address"></p>
-    <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People"
-        id="customer_order"></p>
-    <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required
-        name="date" id="current-time"></p>
-    <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Total" required name="Name"
-        id="customer_total">
-    </p>
-    <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
-  </form>
-</div>
-</div>
+      <p class="para-place-order">Place your order here:</p>
+      <form class="order_form">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"
+            id="customer_name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Address" required name="Name"
+            id="customer_address"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Order" required name="People"
+            id="customer_order"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required
+            name="date" id="current-time"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Total" required name="Name"
+            id="customer_total">
+        </p>
+        <p><button class="w3-button" type="submit" id="btn-form">SEND ORDER</button></p>
+      </form>
+    </div>
+  </div>
 </div>
 <div class="jumbotron text-center" style="margin-bottom:0" style="margin-top:0">
   <h1 id="h1-head">Meal.ly</h1>
@@ -87,45 +88,50 @@
 
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
 <div class="container">
-    <div class="row">
-        <!-- Order Placed -->
-        <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="lefthead"><strong>Order Placed</strong></div>
-                <div class="panel-body">
-                    <ul>
-                        {{#each meals}}
-                       
-                            {{#unless onTheway}}
-                                <span class="orderInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}} </strong></span>
-                                <button type="button" class="deliverorder btn btn-secondary" id ="deliverbutton" data-id="{{id}}" data-newonTheway="{{onTheway}}"><span class="fas fa-utensils"></span></button>
-                                <hr>
-                            {{/unless}}
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
+  <div class="row">
+    <!-- Order Placed -->
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="lefthead"><strong>Order Placed</strong></div>
+        <div class="panel-body">
+          <ul>
+            {{#each meals}}
+
+            {{#unless onTheway}}
+            <span class="orderInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} -
+                customer order: {{customer_order}} - customer total: {{customer_total}} </strong></span>
+            <button type="button" class="deliverorder btn btn-secondary fas fa-utensils" id="deliverbutton"
+              data-id="{{id}}" data-newonTheway="{{onTheway}}"></button>
+            <hr>
+            {{/unless}}
+            {{/each}}
+          </ul>
         </div>
-        <!-- Order Delivered -->
-        <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading rounded-0" id="righthead"><strong>Order Delivered</strong></div>
-                <div class="panel-body">
-                    <ul>
-                        {{#each meals}}
-                      
-                            {{#if onTheway}}
-                                <span class="deliveredInfo"><strong> customer name: {{customer_name}} - customer address: {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}}  </strong></span>
-                                <button type="button" class="deliveredOrder btn btn-dark" id ="trashbutton" data-id="{{this.id}}" data-newonTheway=""="{{onTheway}}"><span class="fas fa-truck"></span></button>
-                                <hr>
-                            {{/if}}
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
+      </div>
+    </div>
+    <!-- Order Delivered -->
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading rounded-0" id="righthead"><strong>Order Delivered</strong></div>
+        <div class="panel-body">
+          <ul>
+            {{#each meals}}
+
+            {{#if onTheway}}
+            <span class="deliveredInfo"><strong> customer name: {{customer_name}} - customer address:
+                {{customer_address}} - customer order: {{customer_order}} - customer total: {{customer_total}}
+              </strong></span>
+            <button type="button" class="deliveredOrder btn btn-dark fas fa-truck" id="trashbutton"
+              data-id="{{this.id}}" data-newonTheway=""="{{onTheway}}"></button>
+            <hr>
+            {{/if}}
+            {{/each}}
+          </ul>
         </div>
-    </div><!-- /row -->
-    
+      </div>
+    </div>
+  </div><!-- /row -->
+
   {{!-- <div class="input-group mb-3">
     <button type="button" class="btn btn-secondary" id="btnEx">Export To Excel</button> <br>
     <div class="input-group-prepend">

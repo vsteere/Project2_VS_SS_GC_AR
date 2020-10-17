@@ -40,12 +40,13 @@ let deleteId = event.target.getAttribute("data-id");
       console.log("deleted delivered order", data);
       // Reload the page to get the updated list
       getOrders();
+      
 
 
       }
     );
 
-  })
+  });
 
 
 
